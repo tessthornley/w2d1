@@ -4,12 +4,10 @@ function getHTML (options, callback) {
 
     var dataResults = [];
 
-    var requestOptions = {  
-    }
-
-    var keys = Object.keys(options)
-    requestOptions.host = keys.toString();
-    requestOptions.path = options[keys]
+    var requestOptions = {
+        host: options['host'],
+        path: options['path']  
+    };
 
     https.get(requestOptions, function (response){
         
@@ -17,7 +15,7 @@ function getHTML (options, callback) {
     
         response.on('data', function(data){
             dataResults.push(data);
-            printHTML(dataResults);
+            callback(dataResults);
         });
     });
   }
@@ -25,6 +23,7 @@ function getHTML (options, callback) {
   function printHTML (html) {
     console.log(html);
   }
+
   
-getHTML({'sytantris.github.io': '/http-examples/step3.html'
+getHTML({host: 'sytantris.github.io': path: '/http-examples/step3.html'
 }, printHTML);
