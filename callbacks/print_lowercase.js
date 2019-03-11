@@ -6,4 +6,4 @@ function printLowerCase (html) {
     });
 }   
 
-getHTML({host: 'sytantris.github.io', path: '/http-examples/step6/uppercase.html'}, printLowerCase);
+getHTML({host: 'sytantris.github.io', path: '/http-examples/step6/lowercase.html'}, printLowerCase);
