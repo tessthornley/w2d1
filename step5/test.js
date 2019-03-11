@@ -1,6 +1,8 @@
 var getHTML = require('./http-functions');
 
-getHTML({host: 'sytantris.github.io', path: '/http-examples/step3.html'
-}, function (html) {
+function printHTML (html) {
     console.log(html);
-  });
+  }
+
+getHTML({host: 'sytantris.github.io', path: '/http-examples/step3.html'
+}, printHTML);
