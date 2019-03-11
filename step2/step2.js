@@ -14,9 +14,6 @@ function getAndPrintHTML () {
 
         response.on('data', function(data){
             dataResults.push(data);
-        });
-
-        response.on('end', function(){
             console.log(dataResults);
         });
     }); 
