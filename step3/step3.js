@@ -4,12 +4,10 @@ function getAndPrintHTML (options) {
 
     var dataResults = [];
 
-    var requestOptions = {  
-    }
-
-    var keys = Object.keys(options)
-    requestOptions.host = keys.toString();
-    requestOptions.path = options[keys]
+    var requestOptions = {
+        host: options['host'],
+        path: options['path']  
+    };
 
     https.get(requestOptions, function (response){
         
@@ -25,6 +23,6 @@ function getAndPrintHTML (options) {
     });
   }
 
- getAndPrintHTML({'sytantris.github.io': '/http-examples/step3.html'
+ getAndPrintHTML({host: 'sytantris.github.io', path:'/http-examples/step3.html'
   });
   
